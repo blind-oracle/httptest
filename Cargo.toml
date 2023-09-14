@@ -1,0 +1,24 @@
+[package]
+name = "httptest"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1"
+async-trait = "0.1"
+bytes = "1.4.0"
+axum = "0.6.1"
+axum-prometheus = "0.4"
+http = "0.2.6"
+http-body = "0.4"
+hyper = { version = "0.14.26", features = ["client", "http2", "http1"] }
+hyper-rustls = { version = "0.24.0", features = ["http2"] }
+itertools = "0.10"
+tower = "0.4"
+tower-http = { version = "0.4", features = ["trace", "map-response-body"] }
+tracing = "0.1"
+tokio = { version = "1.19.2", features = ["full"] }
+
+[[bin]]
+name = "httptest"
+path = "main.rs"
